@@ -1,0 +1,17 @@
+package: cloud.lazycat.app.miniboard
+version: 0.0.1
+name: miniboard
+description: "轻量但全能的仪表盘软件"
+min_os_version: "1.5.0"
+homepage: https://github.com/aceberg/miniboard
+author: aceberg
+unsupported_platforms:
+  - ios
+  - android
+locales:
+  zh:
+    description: "轻量但全能的仪表盘软件"
+    name: miniboard
+  en:
+    description: "Lightweight but all-in-one dashboard software"
+    name: miniboard

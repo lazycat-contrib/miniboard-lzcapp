@@ -1,0 +1,35 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: .lazycat-build/miniboard.lpk
+  target_arch: amd64
+
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: miniboard
+build:
+  run_buildscript: false
+images:
+  - id: miniboard
+    target: service
+    service: miniboard
+    source: aceberg/miniboard
+    channel: stable
+    sort: semver
+    tag_regex: '^v?\d+\.\d+\.\d+$'
+    delivery:
+      mode: mirror
+stores:
+  official:
+    enabled: false
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: miniboard
+    summary: "轻量但全能的仪表盘软件"
